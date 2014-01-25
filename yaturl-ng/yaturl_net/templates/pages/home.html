@@ -10,7 +10,7 @@ yatURL.net
 {% block main %}
                 <p><label for="id_link" accesskey="U">
                     Please insert the <span class="accesskey">U</span>RL here:</label></p>
-                <form action="{% url home %}" method="post">
+                <form action="{% url "home" %}" method="post">
                     {% csrf_token %}
                     {# TODO include honeypot #}
 
@@ -25,9 +25,9 @@ yatURL.net
                     <p><input class="button" type="submit" value="Submit URL"/></p>
                 </form>
 
-            <p>Your free short URL service &mdash; <a href="{% url about %}#license">Free as in Freedom</a></p>
+            <p>Your free short URL service &mdash; <a href="{% url "about" %}#license">Free as in Freedom</a></p>
 
             <p>Somebody sent you a link and you want to know what's
-               behind without clicking on it? <a href="{% url showurl_form %}">Click here</a>.</p>
+               behind without clicking on it? <a href="{% url "showurl_form" %}">Click here</a>.</p>
 
 {% endblock %}

@@ -6,7 +6,7 @@ Contact Us
 
 
 {% block main %}
-    <form action="{% url contact %}" method="post">
+    <form action="{% url "contact" %}" method="post">
         {% csrf_token %}
         {# TODO include honeypot #}
         {# TODO improve error msg css #}

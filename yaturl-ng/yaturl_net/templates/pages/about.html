@@ -13,7 +13,7 @@ About
     <p>Yaturl.net is project to offer a free short URL
     service based on <a href="http://www.fsf.org/">free software</a>.</p>
 
-    <p><a href="{% url home %}">Home</a></p>
+    <p><a href="{% url "home" %}">Home</a></p>
 
     <h1>Terms of usage</h1>
     <p>Please feel free to use the service whenever you
@@ -22,7 +22,7 @@ About
     it by turning on brain before acting. Please act
     responsible.</p>
 
-    <p><a href="{% url home %}">Home</a></p>
+    <p><a href="{% url "home" %}">Home</a></p>
 
     <h1 id="license">Development, License and Contribution/Donation</h1>
     <p>Yaturl.net is developed and can be reused under terms
@@ -32,15 +32,15 @@ About
     <p>If you like to contribute or donate to this project,
     please feel free to send a patch to improve some
     functions of this tool. To do so, please use the
-    <a href="{% url contact %}">contact form</a> to do so.</p>
+    <a href="{% url "contact" %}">contact form</a> to do so.</p>
 
-    <p><a href="{% url home %}">Home</a></p>
+    <p><a href="{% url "home" %}">Home</a></p>
 
     <h1>Contact</h1>
 
     <p>If you need to get in contact with the authors, please check
-    the whois of this domain or use our <a href="{% url contact %}"
+    the whois of this domain or use our <a href="{% url "contact" %}"
     >contact form </a> to send you request..</p>
 
-    <p><a href="{% url home %}">Home</a></p>
+    <p><a href="{% url "home" %}">Home</a></p>
 {% endblock %}
