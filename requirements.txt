@@ -1,0 +1,6 @@
+South
+django-extensions
+django-honeypot
+django
+mysql-python
+yolk
