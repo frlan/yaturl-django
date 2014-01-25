@@ -6,6 +6,8 @@ from django.template.loader import get_template
 from django.contrib.sites.models import get_current_site
 import hashlib
 
+# i18n
+from django.utils.translation import ugettext_lazy as _
 
 #----------------------------------------------------------------------
 def send_contact_mail(request, subject, message, sender, template_name='contact_mail.txt'):

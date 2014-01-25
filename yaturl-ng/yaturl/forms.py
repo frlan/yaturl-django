@@ -5,13 +5,15 @@ from django.contrib.sites.models import get_current_site
 from urlparse import urlsplit
 from yaturl.models import Link
 
+# i18n
+from django.utils.translation import ugettext_lazy as _
 
 ########################################################################
 class ContactForm(forms.Form):
 
-    sender = forms.EmailField(label=u'Your eMail')
-    subject = forms.CharField(min_length=1, max_length=100)
-    message = forms.CharField(widget=forms.Textarea, label=u'Your Message')
+    sender = forms.EmailField(label=_(u'Your eMail'))
+    subject = forms.CharField(label=_(u'Your Subject'), min_length=1, max_length=100)
+    message = forms.CharField(widget=forms.Textarea, label=_(u'Your Message'))
 
 
 ########################################################################

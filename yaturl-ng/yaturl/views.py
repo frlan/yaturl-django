@@ -10,6 +10,8 @@ from yaturl.models import Link, Access
 from yaturl.utils import get_sha1_hash, send_contact_mail
 from django.core.urlresolvers import reverse
 
+# i18n
+from django.utils.translation import ugettext_lazy as _
 
 ########################################################################
 class SiteMismatchError(Exception):
@@ -46,7 +48,7 @@ def showurl_form(request):
             try:
                 link_shorthash = _get_link_shorthash_from_url(request, short_link)
             except SiteMismatchError:
-                msg = u'Link not found or an invalid URL/hash has been provided.'
+                msg = _(u'Link not found or an invalid URL/hash has been provided.')
                 errors.append(msg)
             else:
                 return HttpResponseRedirect(reverse('showurl', kwargs={'link_hash': link_shorthash}))
@@ -86,7 +88,7 @@ def showurl(request, link_hash=None):
     try:
         link = Link.objects.get(link_shorthash=link_hash)
     except Link.DoesNotExist:
-        msg = u'Link not found or an invalid URL/hash has been provided.'
+        msg = _(u'Link not found or an invalid URL/hash has been provided.')
         errors.append(msg)
     else:
         accessed = len(Access.objects.filter(link__id=link.id))

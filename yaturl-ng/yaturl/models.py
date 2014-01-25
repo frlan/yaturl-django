@@ -3,6 +3,9 @@
 from django.contrib.sites.models import Site
 from django.db import models
 
+# i18n
+from django.utils.translation import ugettext_lazy as _
+
 
 ########################################################################
 class Link(models.Model):
