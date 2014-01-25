@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block meta_title %}
+Contact Us
+{% endblock %}
+
+
+{% block main %}
+    <form action="{% url contact %}" method="post">
+        {% csrf_token %}
+        {# TODO include honeypot #}
+        {# TODO improve error msg css #}
+        {{ form.as_p }}
+        <input id="submit" class="button" type="submit" value="Send request" />
+    </form>
+{% endblock %}

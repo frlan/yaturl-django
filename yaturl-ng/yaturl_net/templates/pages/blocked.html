@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block meta_title %}
+Blocked target URL
+{% endblock %}
+
+
+{% block main %}
+    <p>Unfortunatley this short URL has been blocked because of the following reasons:</p>
+
+    <p>{{ comment }}</p>
+
+    <p>Therefor we will not show any detailed content here. Please
+    <a href="{% url contact %}">contact us for further questions.</p>
+
+    <p>Back to <a href="{% url home %}">home</a></p>
+{% endblock %}

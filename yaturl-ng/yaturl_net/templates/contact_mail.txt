@@ -1,0 +1,6 @@
+Mail from {{ site_name }} received via contact form:
+
+Sender: {{ sender }}
+Subject: {{ subject }}
+
+Message: {{ message }}

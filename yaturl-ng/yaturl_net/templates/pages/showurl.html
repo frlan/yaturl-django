@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block meta_title %}
+Show target URL
+{% endblock %}
+
+
+{% block main %}
+
+{% if errors %}
+    {% for error in errors %}
+        <ul class="errorlist"><li>{{ error }}</li></ul>
+    {% endfor %}
+
+    <p><a href="{% url showurl_form %}">Try again</a></p>
+{% else %}
+    <p>Thanks for using our service. The requested target URL is:</p>
+    <p><a href="{{ link.link }}">{{ link.link }}</a></p>
+    <p>The link has been directly accessed {{ accessed }} times excluding
+    this page. More statistics can be found <a href="{% url stats link.link_shorthash %}">here</a>.</p>
+{% endif %}
+
+
+{% endblock %}

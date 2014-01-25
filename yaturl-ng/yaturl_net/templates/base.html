@@ -1,0 +1,11 @@
+{% extends "skel.html" %}
+
+{% comment%}
+For the real base template see skel.html.
+This one exists just to get the title block merged with the header block.
+
+See http://stackoverflow.com/questions/1178743/whats-the-best-way-to-duplicate-data-in-a-django-template/2460866#2460866
+for details.
+{% endcomment%}
+
+{% block header %}{% block meta_title %}{% endblock %}{% endblock %}

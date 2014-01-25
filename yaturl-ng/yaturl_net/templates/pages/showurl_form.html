@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block meta_title %}
+Show target URL
+{% endblock %}
+
+
+{% block main %}
+    <p>Please enter a short URL. The target URL of the entered
+    short URL will be displayed on the next site.
+    Please enter only the characters after the slash of a
+    short URL, e.g. <em>http://yaturl.net/abcde</em> gets
+    <em>abcde</em>.</p>
+
+    <form action="{% url showurl_form %}" method="post">
+        {% csrf_token %}
+        {# TODO include honeypot #}
+
+        {% if errors %}
+            {% for error in errors %}
+                <ul class="errorlist"><li>{{ error }}</li></ul>
+            {% endfor %}
+        {% endif %}
+        {{ form.as_p }}
+{% comment%}
+                <input
+                    id="ShortURL"
+                    name="ShortURL"
+                    type="url"
+                    size="50"
+                    required="required"
+                    autofocus="autofocus"
+                    placeholder="abcde" />
+{% endcomment%}
+        <p>
+            <input class="button" type="submit" value="Submit"/>
+        </p>
+    </form>
+{% endblock %}
